@@ -16,3 +16,7 @@
 ## Constraints
 1. Emergency override must activate only with valid sensor input.
 2. Signal timers must remain within safe bounds.
+
+## Additional Requirement
+- The system shall activate emergency override only when verified emergency vehicle is detected.
+- System shall support multiple intersections coordination.
