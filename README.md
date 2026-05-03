@@ -188,7 +188,3 @@ Lahore Garrison University, Lahore, Pakistan
 [![GitHub](https://img.shields.io/badge/GitHub-humaaslam46-f472b6?style=for-the-badge&logo=github)](https://github.com/humaaslam46)
 
 ---
-
-<div align="center">
-<sub>Built with precision — because in safety-critical systems, correctness is everything.</sub>
-</div>
