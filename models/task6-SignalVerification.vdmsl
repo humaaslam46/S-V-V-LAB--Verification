@@ -1,0 +1,42 @@
+types
+
+Direction = <North> | <South> | <East> | <West>;
+
+SignalColor = <Red> | <Yellow> | <Green>;
+
+SignalState = map Direction to SignalColor;
+
+TrafficDensity = map Direction to nat;
+
+functions
+
+maxTraffic: TrafficDensity -> Direction
+maxTraffic(td) ==
+  let dirs = dom td in
+    iota d in set dirs &
+      forall d2 in set dirs & td(d) >= td(d2);
+
+optimizeSignal: SignalState * TrafficDensity -> SignalState
+optimizeSignal(signalState, trafficDensity) ==
+  let maxDir = maxTraffic(trafficDensity) in
+    { d |-> (if d = maxDir then <Green> else <Red>) 
+      | d in set dom signalState }
+
+pre 
+  -- Sensor availability & valid input
+  dom signalState = dom trafficDensity and
+  card dom signalState > 0 and
+  forall d in set dom trafficDensity & trafficDensity(d) >= 0
+
+post 
+  -- Safety: Only one green signal
+  card {d | d in set dom RESULT & RESULT(d) = <Green>} = 1 and
+
+  -- Correctness: Green assigned to max traffic
+  forall d in set dom RESULT &
+    (RESULT(d) = <Green> =>
+      trafficDensity(d) = 
+        max {trafficDensity(x) | x in set dom trafficDensity}) and
+
+  -- Completeness: All directions assigned signal
+  dom RESULT = dom signalState;

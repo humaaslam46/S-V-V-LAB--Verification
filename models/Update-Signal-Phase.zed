@@ -1,0 +1,22 @@
+UpdateSignalPhase
+-------------------------------
+Δ TrafficSystemState
+newDensity?: DIRECTION → ℕ
+
+--------------------------------
+-- Preconditions
+newDensity? ∈ DIRECTION → ℕ
+emergencyMode = FALSE
+
+--------------------------------
+-- State Update
+trafficDensity' = newDensity?
+
+-- Select one direction with highest density (green)
+∃ d: DIRECTION •
+    (∀ x: DIRECTION • newDensity?(d) ≥ newDensity?(x)) ∧
+    signals'(d) = green ∧
+    (∀ d2: DIRECTION • d2 ≠ d ⇒ signals'(d2) ≠ green)
+
+-- Timers unchanged
+signalTimers' = signalTimers

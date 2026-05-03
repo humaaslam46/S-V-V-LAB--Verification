@@ -1,0 +1,16 @@
+[ DIRECTION, VEHICLE ]
+
+Signal ::= green | yellow | red
+
+TrafficSystemState
+--------------------------------
+signals: DIRECTION → Signal
+trafficDensity: DIRECTION → ℕ
+signalTimers: DIRECTION → ℕ
+emergencyMode: BOOL
+log: seq ℕ
+
+--------------------------------
+-- Invariants
+∀ d1, d2: DIRECTION •
+    d1 ≠ d2 ∧ signals(d1) = green ⇒ signals(d2) ≠ green

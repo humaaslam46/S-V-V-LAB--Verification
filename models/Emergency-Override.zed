@@ -1,0 +1,59 @@
+ActivateEmergencyOverride
+--------------------------------
+Δ TrafficSystemState
+vehicle?: VEHICLE
+priorityDir?: DIRECTION
+sensorValid?: BOOL
+
+--------------------------------
+-- Preconditions
+sensorValid? = TRUE
+emergencyMode = FALSE
+
+--------------------------------
+-- State Updates
+
+-- Activate emergency mode
+emergencyMode' = TRUE
+
+-- Give priority (green) to emergency direction
+signals'(priorityDir?) = green
+
+-- All other directions must not be green
+∀ d: DIRECTION •
+    d ≠ priorityDir? ⇒ signals'(d) ≠ green
+
+-- Timers reset for safety
+∀ d: DIRECTION •
+    signalTimers'(d) = 0
+
+-- Log event (simple representation)
+log' = log ⌢ ⟨1⟩
+
+--Exception CASES:
+--CASE1: Invalid Sensor Input
+InvalidSensorInput
+--------------------------------
+Ξ TrafficSystemState
+sensorValid?: BOOL
+
+--------------------------------
+sensorValid? = FALSE
+
+--CASE2: Emergency Already active
+EmergencyAlreadyActive
+--------------------------------
+Ξ TrafficSystemState
+
+--------------------------------
+emergencyMode = TRUE
+
+--CASE3: Conflict in emergency requests
+ConflictingEmergency
+--------------------------------
+Ξ TrafficSystemState
+priorityDir?: DIRECTION
+
+--------------------------------
+-- conflict condition (example)
+∃ d: DIRECTION • d ≠ priorityDir?
