@@ -1,15 +1,6 @@
 # 🚦 Smart Traffic Signal Control System
 ### Software Verification & Validation Lab — Lahore Garrison University
 
-<div align="center">
-
-![GitHub repo size](https://img.shields.io/github/repo-size/humaaslam46/V-V-LAB-VERIFICATION?style=for-the-badge&color=c084fc&labelColor=1e1e2e)
-![GitHub last commit](https://img.shields.io/github/last-commit/humaaslam46/V-V-LAB-VERIFICATION?style=for-the-badge&color=f472b6&labelColor=1e1e2e)
-![GitHub top language](https://img.shields.io/github/languages/top/humaaslam46/V-V-LAB-VERIFICATION?style=for-the-badge&color=a78bfa&labelColor=1e1e2e)
-![Status](https://img.shields.io/badge/Status-Completed-22c55e?style=for-the-badge&labelColor=1e1e2e)
-
-</div>
-
 ---
 
 ## 📌 Overview
