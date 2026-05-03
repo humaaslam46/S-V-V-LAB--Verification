@@ -1,0 +1,76 @@
+# ------------------------------
+# OS FILES (Windows)
+# ------------------------------
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ------------------------------
+# SYSTEM / TEMP FILES
+# ------------------------------
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+
+# ------------------------------
+# EDITOR FILES
+# ------------------------------
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# ------------------------------
+# GIT FILES (safety)
+# ------------------------------
+.git/
+.gitignore
+
+# ------------------------------
+# BUILD / GENERATED FILES
+# ------------------------------
+dist/
+build/
+out/
+target/
+
+# ------------------------------
+# Z TOOL / FORMAL MODEL TEMP FILES
+# ------------------------------
+*.zed~
+*.ztemp
+
+# ------------------------------
+# OVERTURE (VDM) FILES
+# ------------------------------
+*.class
+*.vdmpp~
+*.vdmsl~
+*.project
+*.classpath
+.settings/
+
+# ------------------------------
+# ALLOY ANALYZER FILES
+# ------------------------------
+*.als~
+*.cnf
+*.out
+
+# ------------------------------
+# TEST / CACHE FILES
+# ------------------------------
+__pycache__/
+*.pyc
+
+# ------------------------------
+# OPTIONAL (UNCOMMENT IF NEEDED)
+# ------------------------------
+# screenshots/
+# *.png
+# *.jpg
