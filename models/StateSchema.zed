@@ -1,4 +1,4 @@
-[ DIRECTION, VEHICLE ]
+[ DIRECTION, VEHICLE]
 
 Signal ::= green | yellow | red
 
