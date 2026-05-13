@@ -1,5 +1,5 @@
 # 🚦 Smart Traffic Signal Control System
-### Software Verification & Validation Lab — Lahore Garrison University
+### Software Verification & Validation Lab — OEL
 
 ---
 
